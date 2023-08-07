@@ -1,0 +1,48 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+void sortofarray(vector<int> &v,int n)
+{
+    int count_zero = 0;
+    for(int ele:v)
+    {
+        if(ele==0)
+        {
+            count_zero+=1; 
+        }
+    }
+    
+    for(int i=0;i<=n;i++)
+    {
+        if(i<count_zero)
+        {
+            v[i]=0;
+        }
+        else
+        {
+            v[i]=1;
+        }
+    }
+    for(int i=0;i<n;i++)
+    {
+        cout<<v[i];
+    }
+}
+
+
+int main()
+{
+    int n;
+    cin>>n;
+    
+    
+    vector<int> v;
+    for(int i=0;i<n;i++)
+    {
+        int ele;
+        cin>>ele;
+        v.push_back(ele);
+    }
+    
+    sortofarray(v,n);
+}
